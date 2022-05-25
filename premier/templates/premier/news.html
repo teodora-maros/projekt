@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    News
+{% endblock title %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "premier/news.css" %}">
+{% endblock css_files %}
+
+{% block content %}
+    <header id="welcome">
+        <a href="{% url "standings" %}"> <img src="{% static "premier/media/logo.png" %}" alt="logo" /> </a>
+        <h1>Premier league news</h1>
+    </header>
+
+    <section id="all-posts">
+            {% for post in all_posts %}
+            <ul>
+            <li>
+                <article class="post">
+                    <a href="{% url "post-detail-page" post.slug %}">
+                        <img src="{{post.image.url}}">
+                            <div class="post-content">
+                                <h3>{{ post.title }}</h3>
+                                    <p>
+                                        {{ post.excerpt }}
+                                </p>
+                        </div>
+                    </a>
+                </article>
+            </li> 
+        </ul>          
+        {% endfor %} 
+    </section>
+{% endblock content %}
