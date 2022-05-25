@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    {{ post.title }}
+{% endblock title %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "premier/post-detail.css" %}">
+{% endblock css_files %}
+{% block content %}
+
+<header id="welcome">
+    <a href="{% url "standings" %}"> <img src="{% static "premier/media/logo.png" %}" alt="logo" /> </a>
+    <h1>Premier league news</h1>
+</header>
+
+    
+<section id="summary">
+        <h2>{{ post.title }}</h2>
+        <div>
+            <img src="{{post.image.url}}" alt="Missing image">
+        </div>
+        <article>
+            <div id="update">
+                Last updated on <time>{{ post.date|date:"d M Y" }}</time>
+            </div>
+        </article>    
+    </section>
+    <main>
+        {{ post.content|linebreaks }}
+    </main>
+
+    <section id="comments">
+        <ul>
+            {% for comment in comments %}
+                <li>
+                    <h2>{{comment.user_name}}</h2>
+                    <p>{{comment.text|linebreaks}}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    </section>
+
+
+<section id="comment-form">
+    <form action="{%url "post-detail-page" post.slug%}" method="POST">
+        {% csrf_token %}
+        <h2>Submit Comment</h2>
+        {% for form_field in comment_form %}
+        
+            <div class="form-control {%if form_field.errors%}invalid{%endif%}">
+                {{form_field.label_tag}}
+                {{form_field}}
+                {{form_field.errors}} 
+            </div>
+        {% endfor %}
+        <button>Save Comment</button>
+    </form>
+</section>
+{% endblock content %}
