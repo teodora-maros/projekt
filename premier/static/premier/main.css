@@ -1,0 +1,148 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+}
+
+a:hover{
+  color: rgb(153, 153, 194);
+}
+
+.site-header { 
+  padding: .5em 1em;
+}
+
+.site-navigation {
+  float: right;
+  color: white;
+}
+
+.site-navigation ul, li {
+  margin: 0; 
+  padding: 0;
+}
+
+.site-navigation li {
+  display: inline-block;
+  margin: 2em 1em 1em 1em;
+  }
+
+#welcome {
+    background: linear-gradient(45deg, rgba(58,0,61,1) 0%, rgba(45,5,82,1) 50%, rgba(15,15,131,1) 100%, rgba(0,212,255,1) 100%);;
+    padding: 6rem 1rem;
+    height: 100px;
+  }
+  
+  #welcome img{
+    width: 100px;
+    object-fit: cover;
+    object-position: top;
+    float: left;
+    margin-left: 3rem;
+  }
+  
+  #welcome h1{
+    font-family: "Radikal";
+    font-weight: 900;
+    font-size: 4rem;
+    margin-left: 13rem;
+    color: #ffffff;
+    margin-top: 30px;
+  
+  }
+  
+#table{
+    margin-left:auto;
+    margin-right: 3rem;
+    margin-top: 4rem;
+    width: 60%;
+    line-height: 3.65rem;
+    float: right;
+    display: block;
+    padding: 1rem;
+    border-radius: 20px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  }
+
+
+#pos{
+  padding-right: 20px;
+  width: 5%;
+  color: grey;
+  font-weight: normal;
+  margin-bottom: 20px;
+}
+
+.th{
+  padding-right: 120px;
+  width: 100%;
+  color: grey;
+  font-weight: normal;
+  margin-bottom: 20px;
+}
+
+#table img{
+  width: 50px;
+  float: left;
+  margin-left: 30px;
+  margin-right: 10px;
+
+}
+
+#playlist{
+  margin-left: 1rem;
+  margin-top: 4rem;
+}
+
+
+/* OVDJE JE CSS ZA FEATURED NEWS */
+
+#featured-news{
+  margin-top: 4rem;
+  margin-left: 1rem;
+  width: 25%;
+  float: left;
+  border-radius: 12px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+}
+
+#featured-news ul{
+  list-style: none;
+}
+
+#featured-news li{
+  width: 250px;
+  margin-bottom: 3rem;
+}
+
+
+#featured-news img{
+  width: 250px;
+}
+
+#featured-news h3{
+  font-size: 20px;
+  margin: auto;
+  width: 10rem;
+  padding-left: 1rem;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+
+}
+
+#featured-news a{
+  color: black;
+}
+
+#featured-news a:hover{
+  color: #3A003D;
+}
+
+

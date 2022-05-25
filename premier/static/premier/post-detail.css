@@ -1,0 +1,168 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+}
+
+a:hover{
+  color: rgb(153, 153, 194);
+}
+
+.site-header { 
+  padding: .5em 1em;
+}
+
+.site-navigation {
+  float: right;
+  color: white;
+}
+
+.site-navigation ul, li {
+  margin: 0; 
+  padding: 0;
+}
+
+.site-navigation li {
+  display: inline-block;
+  margin: 2em 1em 1em 1em;
+  }
+
+#welcome {
+    background: linear-gradient(45deg, rgba(58,0,61,1) 0%, rgba(45,5,82,1) 50%, rgba(15,15,131,1) 100%, rgba(0,212,255,1) 100%);;
+    padding: 6rem 1rem;
+    height: 100px;
+  }
+  
+  #welcome img{
+    width: 100px;
+    object-fit: cover;
+    object-position: top;
+    float: left;
+    margin-left: 3rem;
+  }
+  
+  #welcome h1{
+    font-family: "Radikal";
+    font-weight: 900;
+    font-size: 4rem;
+    margin-left: 13rem;
+    color: #ffffff;
+    margin-top: 30px;
+  
+  }
+    
+#summary{
+  margin: auto;
+  width: 50%;
+  margin-top: 70px;
+  font-size: 30px;
+}
+
+#summary img{
+  width: 40rem;
+}
+
+#summary h2{
+  width: 110%;
+}
+
+#update{
+  font-size: 15px;
+  font-weight: bold;
+  color: rgb(97, 96, 96);
+}
+
+main{
+  margin: auto;
+  width: 50%;
+  margin-top: 70px;
+  text-align: justify;
+  line-height: 1.7rem;
+  }
+
+/* OVDJE ZAPOČINJE DIZAJN ZA KOMENTARE*/
+.form-control{
+  margin-bottom: 1rem;
+}
+
+.form-control label{
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.form-control input,
+.form-control textarea{
+  display: block;
+  width: 95%;
+  font: inherit;
+  padding: 0.25rem;
+  border-radius: 0px;
+  border: 1px solid #ccc;
+}
+
+
+#comment-form{
+  margin: 10rem 3rem 1rem auto;
+  width: 30rem;
+  max-width: 90rem;
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  padding: 2rem;
+  float: right;
+  border-radius: 12px;
+  height: 35rem;
+  line-height: 1.2rem;
+}
+
+#comment-form button{
+  font: inherit;
+  background-color: #000000;
+  color: white;
+  border: none;
+  margin: 4rem auto;
+  border-radius: 30px;
+  cursor: pointer;
+  width: 30rem;
+  height: 3rem;
+}
+
+#comment-form button:hover,
+#commment-form button:active{
+  background-image: linear-gradient(45deg, rgba(58,0,61,1) 0%, rgba(45,5,82,1) 50%, rgba(15,15,131,1) 100%, rgba(0,212,255,1) 100%);
+}
+
+#comments{
+  margin: 10rem 3.7rem;
+  width: 40%;
+  max-width: 90%;
+  border-radius: 12px;
+  background-color: white;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25);
+  padding: 1rem 2rem;
+  float: left;
+}
+
+#comments ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#comments li{
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #ccc;
+}
+
+#comments li:last-of-type{
+  border-bottom: none;
+}
+
+#comments h2{
+  color: #464646;
+}
