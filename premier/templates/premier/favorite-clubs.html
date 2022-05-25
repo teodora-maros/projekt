@@ -1,0 +1,40 @@
+{%extends "base.html"%}
+{% load static %}
+
+{% block title %}
+    Favorite Clubs    
+{% endblock title %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "premier/favorite-clubs.css" %}">
+{% endblock css_files %}
+
+
+{% block content %}
+<header id="welcome">
+    <a href="{% url "standings" %}"> <img src="{% static "premier/media/logo.png" %}" alt="logo" /> </a>
+    <h1>Favorites</h1>
+</header>
+
+
+<section id="stored-posts">
+    {% if not has_posts %}
+        <p id="not-saved">You haven't added any clubs to favorites yet.</p>
+    {% endif %}
+    <ul>
+        {% for list in list %}
+            <a href="{% url "club-detail-page" list.standings_slug %}">      
+                <li id="all-clubs">
+                    <img src="{{list.logo.url}}">
+                    <h1> {{ list.club }}</h1>
+                    <h2> {{ list.stadium }}</h2>
+                </li>
+            </a>
+        {% endfor %} 
+    </ul>
+</section>
+
+
+{% endblock content %}
+
+
