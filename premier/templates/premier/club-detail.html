@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "premier/club-detail.css" %}">
+{% endblock css_files %}
+{% block content %}
+
+<header id="welcome">
+    <a href="{% url "standings" %}"> <img src="{% static "premier/media/logo.png" %}" alt="logo" /> </a>
+    <h1>{{post.club}}</h1>
+</header>
+
+
+<!--
+<div id="square"> </div>
+<div id="square_two"> </div>
+-->
+
+<!--<img src="{{post.stadium_img.url}}" id="stadium" name="viewport" content="width=device-width, initial-scale=1.0"> </img> -->
+
+
+<!--
+<section id="title"> 
+    <h1>{{post.club}}</h1>
+</section> -->
+
+
+
+
+<section id="basic">
+    <img src="{{post.logo.url}}"></img>
+    <p><b>Stadium name:</b> {{post.stadium}}</p>
+    <p><b>Founded:</b> {{post.founded}}</p>
+    <p><b>Manager:</b> {{post.manager}}</p>
+    <a href="{{post.website}}" target="blank" id="website"><p><b>Official website &#8594; </b></p></a>
+</section>
+
+
+
+<section id="main"> 
+    <p>{{post.text |linebreaks}} </p>
+</section>
+
+<div id="read-later">
+    <form action="{% url "favorite-clubs"%}" method="POST">
+        {% csrf_token %}
+        <input type="hidden" value="{{post.id}}" name="post_id"> 
+    <button>
+        {% if saved_for_later %}
+            Remove club from favorites
+        {% else %}
+            Add club to favorites
+        {% endif %}
+    </button>
+    </form>
+</div>
+
+<section id="facts"> 
+    <h1> Did you know? </h1> 
+    <p>- {{post.fact_one}}</p> 
+    <p>- {{post.fact_two}}</p> 
+    <p>- {{post.fact_three}}</p>
+</section>
+{% endblock content %}
