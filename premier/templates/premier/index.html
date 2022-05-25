@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Premier league
+{% endblock title %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "premier/main.css" %}">
+{% endblock css_files %}
+
+{% block content %}
+
+<header id="welcome">
+    <a href="{% url "standings" %}"> <img src="{% static "premier/media/logo.png" %}" alt="logo" /> </a>
+      <h1>Premier league</h1>
+</header>
+    <section id="table">
+        <table>
+            <tr>
+                <th id="pos">#</th>
+                <th class="th">Club</th>
+                <th class="th">MP</th>
+                <th class="th">GD</th>
+                <th class="th">pts</th>
+            </tr>
+            
+            <tr>
+                {% for tables in table %}
+                <td>{{tables.position}}</td>
+                <td><img src="{{tables.logo.url}}"> {{tables.club}} </td>
+                <td>{{tables.MP}}</td>
+                <td>{{tables.GD}}</td>
+                <td>{{tables.pts}}</td>
+            </tr>
+            
+            {% endfor %}
+        </table>
+    </section>
+
+    <section id="playlist">
+        <iframe style="border-radius:12px" float="left" src="https://open.spotify.com/embed/playlist/4x7T8AjUHcikyQowTJoxOj?utm_source=generator" width="25%" height="500" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>    </section>
+
+        <section id="featured-news">
+        <h3> Featured news </h3>
+        {% for featured in featured%}
+            <ul> 
+                <li>
+                    <a href="{% url "post-detail-page" featured.slug %}">
+                        <img src="{{featured.image.url}}"> <br>
+                        {{featured.title}} 
+                    </a>
+                </li> 
+            </ul>
+        {%endfor%}
+        </section>
+{% endblock content %}
